@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-5">
+    <h1 class="text-2xl font-bold text-center mb-5">Pricing Calculator</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white rounded-lg shadow-lg p-5">
+      <!-- Left Side -->
+      <div class="space-y-4">
+        <h2 class="text-xl font-semibold">Input Fields</h2>
+        <div>
+          <label for="product-price" class="block text-sm font-medium">Product Price *</label>
+          <input type="number" id="product-price" class="w-full p-2 border rounded" placeholder="Enter product price (e.g., 349)" required>
+        </div>
+        <div>
+          <label for="rto-charges" class="block text-sm font-medium">RTO Charges *</label>
+          <input type="number" id="rto-charges" class="w-full p-2 border rounded" placeholder="Enter RTO charges (e.g., 72)" required>
+        </div>
+        <div>
+          <label for="selling-price" class="block text-sm font-medium">Selling Price *</label>
+          <input type="number" id="selling-price" class="w-full p-2 border rounded" placeholder="Enter selling price (e.g., 999)" required>
+        </div>
+        <div>
+          <label for="expected-orders" class="block text-sm font-medium">Expected Orders *</label>
+          <input type="number" id="expected-orders" class="w-full p-2 border rounded" placeholder="Enter expected orders (e.g., 20)" required>
+        </div>
+        <div>
+          <label for="confirmed-orders" class="block text-sm font-medium">Confirmed Orders (%) *</label>
+          <input type="number" id="confirmed-orders" class="w-full p-2 border rounded" placeholder="Enter % of confirmed orders (e.g., 80)" required>
+        </div>
+        <div>
+          <label for="expected-delivery" class="block text-sm font-medium">Expected Delivery (%) *</label>
+          <input type="number" id="expected-delivery" class="w-full p-2 border rounded" placeholder="Enter % of deliveries (e.g., 78)" required>
+        </div>
+        <div>
+          <label for="ad-spends" class="block text-sm font-medium">Ad Spends per Order *</label>
+          <input type="number" id="ad-spends" class="w-full p-2 border rounded" placeholder="Enter ad spend per order (e.g., 160)" required>
+        </div>
+        <div>
+          <label for="misc-charges" class="block text-sm font-medium">Total Misc. Charges *</label>
+          <input type="number" id="misc-charges" class="w-full p-2 border rounded" placeholder="Enter misc charges (e.g., 115)" required>
+        </div>
+        <button id="calculate-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Calculate</button>
+      </div>
+
+      <!-- Right Side -->
+      <div class="space-y-4">
+        <h2 class="text-xl font-semibold">Results</h2>
+        <div class="bg-green-100 p-4 rounded">
+          <p><strong>Net Profit:</strong> <span id="net-profit">0.00</span></p>
+          <p><strong>Net Profit (Per Order):</strong> <span id="profit-per-order">0.00</span></p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded">
+          <h3 class="font-bold">Order Summary</h3>
+          <p>Total Orders: <span id="total-orders">0</span></p>
+          <p>Confirmed Orders: <span id="confirmed-orders-result">0</span></p>
+          <p>Delivered Orders: <span id="delivered-orders">0</span></p>
+          <p>RTO Orders: <span id="rto-orders">0</span></p>
+          <p>Cancelled Orders: <span id="cancelled-orders">0</span></p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded">
+          <h3 class="font-bold">Total Earnings</h3>
+          <p>Margin per Order: <span id="margin-per-order">0.00</span></p>
+          <p>Total Earnings: <span id="total-earnings">0.00</span></p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded">
+          <h3 class="font-bold">Total Spends</h3>
+          <p>Total Ad Spends: <span id="total-ad-spends">0.00</span></p>
+          <p>Total RTO Charges: <span id="total-rto-charges">0.00</span></p>
+          <p>Total Misc. Charges: <span id="total-misc-charges">0.00</span></p>
+          <p>Total Spends: <span id="total-spends">0.00</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
